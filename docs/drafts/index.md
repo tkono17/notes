@@ -2,7 +2,7 @@
 
 
 ## 構造
-[並進と回転](transformTR.md)
+[並進と回転](../structures/TransformTR.md)
 
 # 計算機
 [オブジェクト指向](CppOO.md), 

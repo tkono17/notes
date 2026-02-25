@@ -8,7 +8,8 @@
 
 ### Hello, world
 最初のC++プログラムとして、Hello, world! という文字列を表示するだけのプログラムを作成する。ソースコードは以下のようになる。これをhello.cxxという名前のファイルに書いて保存しておく。
-```c++: title="hello.cxx"
+
+```c++ title="hello.cxx"
 #include <iostream>
 
 int main(int argc, char* argv[]) {
@@ -41,7 +42,7 @@ ls
 >> Hello, Alice!
 ```
 
-```c++
+```c++ title="helloToYou.cxx"
 #include <iostream>
 #include <string>
 
@@ -59,7 +60,7 @@ int main(int argc, char* argv[]) {
 ### コマンドライン引数
 上の例では、プログラムにユーザーの名前を渡すために質問を表示して、その答えを受け取るというように対話的にデータをやり取りした。どのようなデータを渡す必要があるか予め分かっている場合には、コマンドライン引数を利用することも可能である。
 
-```c++
+```c++ title="helloTo.cxx"
 #include <iostream>
 #include <string>
 

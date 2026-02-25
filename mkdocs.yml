@@ -9,6 +9,8 @@ theme:
     - navigation.tabs.sticky
     - navigation.path
     - navigation.indexes
+    - content.code.copy
+    - content.code.select
 extra_css:
   - stylesheets/extra.css
 nav:
@@ -21,9 +23,9 @@ nav:
   - 計算機:
     - computing/index.md
     - C++ 基礎: computing/CppBasics.md
-    - C++ オブジェクト指向: computing/CppOO.md
-    - C++ メモリの扱い: computing/CppMemory.md
-    - C++ STL: computing/CppStl.md
+#    - C++ オブジェクト指向: computing/CppOO.md
+#    - C++ メモリの扱い: computing/CppMemory.md
+#    - C++ STL: computing/CppStl.md
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true

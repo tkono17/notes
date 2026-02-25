@@ -3,8 +3,8 @@
 ## C++プログラムの作成と実行
 
 ### 目標
-* C++プログラムのソース・コードを書いてコンパイル・実行できるようになる。
-* C++プログラムにデータを渡したり、結果を表示させられるようになる。
+* C++プログラムのソース・コードを書いてコンパイル・実行する手順を学ぶ。
+* C++プログラムにデータを渡したり、プログラムからデータを出力させられるようになる。
 
 ### Hello, world
 最初のC++プログラムとして、Hello, world! という文字列を表示するだけのプログラムを作成する。ソースコードは以下のようになる。これをhello.cxxという名前のファイルに書いて保存しておく。
@@ -77,6 +77,73 @@ int main(int argc, char* argv[]) {
 ```
 このプログラムをhelloTo.cxxとして保存して、コンパイル・実行せよ。ただし、実行時に引数で名前を渡す必要がある。
 
+コマンドライン引数で、2つの整数を渡してその和を計算するプログラムを書いてみる。
+
+```c++ title="addNumbers.cxx"
+#include <iostream>
+#include <cstdlib>
+
+int main(int argc, char* argv[]) {
+  if (argc != 3) {
+    std::cout << "Usage: " << argv[0] << "<number1> <number2>" << std::endl;
+    exit(-1);
+  }
+  int a = std::atoi(argv[1]);
+  int b = std::atoi(argv[2]);
+  int c = a + b;
+  std::cout << "Two numbers " << a << " and " << b << " were given" << std::endl;
+  std::cout << "  --> " << a << " + " << b << " = " << c << std::endl;
+  return 0;
+}
+```
+
+```bash
+> g++ -o addNumbers.exe addNumbers.cxx
+> ./addNumbers.exe 3 15
+```
+
+```c++ title="calculate.cxx"
+#include <iostream>
+#include <cstdlib>
+
+int main(int argc, char* argv[]) {
+  if (argc != 4) {
+    std::cout << "Usage: " << argv[0] << "<number1> <operator> <number2>" << std::endl;
+    std::cout << "-------" << std::endl;
+    std::cout << "Example: " << argv[0] << "31 + 22" << std::endl;
+    exit(-1);
+  }
+  int a = std::atoi(argv[1]);
+  char op = argv[2][0];
+  int b = std::atoi(argv[3]);
+  if (op == '+') {
+    int c = a + b;
+    std::cout << "Calculating " << a << op << b << std::endl;
+    std::cout << "  --> " << a << " " << op << " " << b << " = " << c << std::endl;
+  } else {
+    std::cout << "Unknown operator " << "'" << op << "'" << std::endl;
+  }
+
+  return 0;
+}
+```
+
+このプログラムは次のようにコンパイル・実行できる。
+```bash
+> g++ -o calculate.exe calculate.cxx
+> ./calculate.exe 3 + 15
+```
+
+このプログラムを改良して、足し算だけでなく、以下のように引き算、掛け算、割り算もできるようにせよ。
+```bash
+> ./calculate.exe 10 - 6
+  --> 4 # と表示させたい
+> ./calculate.exe 10 * 6
+  --> 60 # と表示させたい
+> ./calculate.exe 50 / 6
+  --> 8 ... 2 # と表示させたい
+```
+
 ## 素因数分解プログラム
 
 ### 目標
@@ -84,6 +151,14 @@ int main(int argc, char* argv[]) {
 * C++プログラムの制御構造（繰り返し、条件分岐）を使う。
 
 ### プログラムの分解
+
+以下のようにコマンドライン引数で整数を与えると、素因数分解をしてその因子を全て表示するプログラムを作りたい。左から順に小さい因子が並び、同じ因子が複数回現れる場合はそれをべき乗の形で表示させたい。
+```bash
+> ./primeDecomposition.exe 180
+  --> 2^2 3^2 5
+> ./primeDecomposition.exe 119
+  --> prime number
+```
 
 ### 整数の演算
 
@@ -96,25 +171,5 @@ int main(int argc, char* argv[]) {
 ### 関数
 
 ### 素因数分解プログラムの作成
-
-## 予定表プログラム
-
-### ウェブページとHTML
-
-### HTMLとCSS
-
-### 予定データの形式
-```CSV
-物理学実験,月,13:20,16:30
-高エネルギー物理学特論,火,13:20,14:50
-高エネルギー物理学演習,火,15:00,16:30
-```
-
-
-### STLコンテナ
-
-### データ構造の導入
-
-### 並べ替え
 
 

@@ -23,7 +23,7 @@ nav:
   - 計算機:
     - computing/index.md
     - C++ 基礎: computing/CppBasics.md
-#    - C++ オブジェクト指向: computing/CppOO.md
+    - C++ オブジェクト指向: computing/CppOO.md
 #    - C++ メモリの扱い: computing/CppMemory.md
 #    - C++ STL: computing/CppStl.md
 markdown_extensions:

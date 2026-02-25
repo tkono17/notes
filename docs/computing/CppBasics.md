@@ -77,6 +77,10 @@ int main(int argc, char* argv[]) {
 }
 ```
 このプログラムをhelloTo.cxxとして保存して、コンパイル・実行せよ。ただし、実行時に引数で名前を渡す必要がある。
+```bash
+> g++ -o helloTo.exe helloTo.cxx
+> ./helloTo.exe Andy
+```
 
 コマンドライン引数で、2つの整数を渡してその和を計算するプログラムを書いてみる。
 

@@ -5,9 +5,9 @@ theme:
   palette:
     primary: green
   features:
-    - navigation.tabs
     - navigation.tabs.sticky
     - navigation.path
+    - navigation.sections
     - navigation.indexes
     - content.code.copy
     - content.code.select
